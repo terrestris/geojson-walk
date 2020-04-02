@@ -1,0 +1,14 @@
+{
+  "name": "geojson-walk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "geojson-walk.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^25.2.6"
+  }
+}
