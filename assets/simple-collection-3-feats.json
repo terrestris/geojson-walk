@@ -3,7 +3,9 @@
     "features": [
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "humpty": "dumpty"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -14,7 +16,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "humpty": "trumpty"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
@@ -25,7 +29,9 @@
         },
         {
             "type": "Feature",
-            "properties": {},
+            "properties": {
+                "humpty": "barty"
+            },
             "geometry": {
                 "type": "Point",
                 "coordinates": [
