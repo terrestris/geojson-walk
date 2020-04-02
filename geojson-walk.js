@@ -1,4 +1,9 @@
-const walk = function (geojson, fn) {
+const toStr = {}.toString;
+const noop = () => {};
+
+const walk = function (o, fn) {
+    const geojson = (o && toStr.call(o) === '[object Object]') ? o : {};
+    const func = (fn && toStr.call(fn) === '[object Function]') ? fn : noop;
     const type = geojson.type;
     switch (type) {
         case 'Feature':
@@ -9,10 +14,12 @@ const walk = function (geojson, fn) {
         case 'Polygon':
         case 'MultiPolygon':
         case 'GeometryCollection': // TODO doc we don't handle `geometries`
-            fn(geojson);
+            func(o);
             break;
         case 'FeatureCollection':
-            geojson.features.forEach(feature => walk(feature, fn));
+            if (o.features && Array.isArray(o.features)) {
+                o.features.forEach(feature => walk(feature, func));
+            }
             break;
         default:
             break;
