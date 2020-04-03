@@ -1,7 +1,11 @@
 {
-  "name": "geojson-walk",
+  "name": "@terrestris/geojson-walk",
   "version": "1.0.0",
-  "description": "",
+  "description": "Validate and clean GeoJSON",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/terrestris/geojson-walk.git"
+  },
   "main": "geojson-walk.js",
   "scripts": {
     "lint": "eslint *.js",
