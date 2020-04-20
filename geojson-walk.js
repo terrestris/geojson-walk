@@ -16,23 +16,23 @@ const walk = function (o, fn, doExpectChange) {
     case 'Polygon':
     case 'MultiPolygon':
     case 'GeometryCollection': // TODO doc we don't handle `geometries`
-      return func(o);
+      return func(geojson);
     case 'FeatureCollection':
       if (expectChange) {
         clone = Object.assign({}, geojson);
       }
-      if (o.features && Array.isArray(o.features)) {
+      if (geojson.features && Array.isArray(geojson.features)) {
         if (expectChange) {
           clone.features = [];
         }
-        o.features.forEach(feature => {
+        geojson.features.forEach(feature => {
           const got = walk(feature, func);
           if (expectChange && got) {
             clone.features.push(got);
           }
         });
       }
-      return expectChange ? clone : o;
+      return expectChange ? clone : geojson;
     default:
       return undefined;
   }
