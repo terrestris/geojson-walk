@@ -58,3 +58,5 @@ const featureCollection = {
 
 const cleanCollection = walk(featureCollection, filterForProp, true);
 ```
+
+[![Build Status](https://travis-ci.com/terrestris/geojson-walk.svg?branch=master)](https://travis-ci.com/terrestris/geojson-walk) [![Coverage Status](https://coveralls.io/repos/github/terrestris/geojson-walk/badge.svg?branch=master)](https://coveralls.io/github/terrestris/geojson-walk?branch=master)
