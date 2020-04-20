@@ -18,7 +18,7 @@ npm i @terrestris/geojson-walk
 This module exposes one function `walk`:
 
 ### walk(o, fn, doExpectChange) ⇒ <code>object</code>
-Walk the GeoJSON and apply the provided function to it and its features (in
+Walk the GeoJSON and apply the provided function to it or its features (in
 case of a `FeatureCollection`). If you expect your function to change the
 passed GeoJSON Feature Collection, then pass the third parameter as true.
 In that case the return value of the function determines what ends up in the
@@ -31,7 +31,7 @@ used, otherwise the Feature will not be in the returned collection.
 | Param | Type | Description |
 | --- | --- | --- |
 | o | <code>object</code> | The GeoJSON we will walk. We do not check whether this is actually a fully valid GeoJSON. |
-| fn | <code>function</code> | The function we will call. Will receive the GeoJSON. |
+| fn | <code>function</code> | The function we will call. Will receive the GeoJSON or each feature of the collection. |
 | doExpectChange | <code>boolean</code> | Whether you expect your function might change the GeoJSON. |
 
 <!-- API docs generated with
