@@ -1,13 +1,41 @@
 # geojson-walk
 
-With geojson-walk an easy tool is provided to validate and clean GeoJSON with a
-user-defined function for necessary requirements of a project.
+A tiny library to apply a function to a GeoJSON. In case of a
+`FeatureCollection`, the function will also be applied to the single `Features`.
+
+This can be used to eg. gather statistics about the GeoJSON (spatial extent,
+attributes, …) or to change / clean it. Have a look at the examples below to
+get an idea of what is possible.
 
 ## Installation
 
 ```bash
 npm i @terrestris/geojson-walk
 ```
+
+## API
+
+This module exposes one function `walk`:
+
+### walk(o, fn, doExpectChange) ⇒ <code>object</code>
+Walk the GeoJSON and apply the provided function to it and its features (in
+case of a `FeatureCollection`). If you expect your function to change the
+passed GeoJSON Feature Collection, then pass the third parameter as true.
+In that case the return value of the function determines what ends up in the
+returned GeoJSON. If you return something `truthy`, the return value will be
+used, otherwise the Feature will not be in the returned collection.
+
+**Kind**: global function
+**Returns**: <code>object</code> - The (possibly changed) GeoJSON.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| o | <code>object</code> | The GeoJSON we will walk. We do not check whether this is actually a fully valid GeoJSON. |
+| fn | <code>function</code> | The function we will call. Will receive the GeoJSON. |
+| doExpectChange | <code>boolean</code> | Whether you expect your function might change the GeoJSON. |
+
+<!-- API docs generated with
+npx jsdoc-to-markdown geojson-walk.js -->
 
 ## Example
 
