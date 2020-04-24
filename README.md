@@ -87,4 +87,10 @@ const featureCollection = {
 const cleanCollection = walk(featureCollection, filterForProp, true);
 ```
 
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/terrestris/geojson-walk/issues)
+
+[![npm version](https://badge.fury.io/js/%40terrestris%2Fgeojson-walk.svg)](https://www.npmjs.com/package/@terrestris/geojson-walk) [![GitHub](https://img.shields.io/github/license/terrestris/geojson-walk)](https://opensource.org/licenses/MIT)
+
 [![Build Status](https://travis-ci.com/terrestris/geojson-walk.svg?branch=master)](https://travis-ci.com/terrestris/geojson-walk) [![Coverage Status](https://coveralls.io/repos/github/terrestris/geojson-walk/badge.svg?branch=master)](https://coveralls.io/github/terrestris/geojson-walk?branch=master)
+
+[![dependencies Status](https://david-dm.org/terrestris/geojson-walk/status.svg)](https://david-dm.org/terrestris/geojson-walk) [![devDependencies Status](https://david-dm.org/terrestris/geojson-walk/dev-status.svg)](https://david-dm.org/terrestris/geojson-walk?type=dev) [![Known Vulnerabilities](https://snyk.io/test/github/terrestris/geojson-walk/badge.svg)](https://snyk.io/test/github/terrestris/geojson-walk)
