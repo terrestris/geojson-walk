@@ -1,0 +1,44 @@
+name: Test and gather coverage of geojson-walk
+
+on: 
+  pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    strategy:
+      matrix:
+        v: [16, 18]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout sources 🔰
+      uses: actions/checkout@v3
+
+    - name: Setup Node.js ${{ matrix.v }} ⬡
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.v }}
+
+    - name: Cache Node.js modules 💾
+      uses: actions/cache@v2
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install dependencies ⏬
+      run: npm install
+
+    - name: Test 🕵️
+      run: npm run test:coverage
+
+    - name: Publish to coveralls ⭐
+      if: ${{ matrix.v == '18' }}
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
