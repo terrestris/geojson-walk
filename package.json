@@ -1,6 +1,6 @@
 {
   "name": "@terrestris/geojson-walk",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validate and clean GeoJSON",
   "repository": {
     "type": "git",
