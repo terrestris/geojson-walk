@@ -12,7 +12,7 @@ jobs:
   test:
     strategy:
       matrix:
-        v: [16, 18]
+        v: [16, 18, 20]
     runs-on: ubuntu-latest
     steps:
     - name: Checkout sources 🔰
@@ -38,7 +38,7 @@ jobs:
       run: npm run test:coverage
 
     - name: Publish to coveralls ⭐
-      if: ${{ matrix.v == '18' }}
+      if: ${{ matrix.v == '20' }}
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
